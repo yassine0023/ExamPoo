@@ -15,10 +15,10 @@ public class Account {
         System.out.println("ID : ") ;
         this.id = scanner.nextInt();
         scanner.nextLine();
-        //create user name of customer
+        //create username of customer
         System.out.println("UserName : ") ;
         this.username = scanner.nextLine();
-        //create password and store it hashed
+        //create password
         System.out.println("Password : ") ;
         String password = scanner.nextLine() ;
         this.password = password;

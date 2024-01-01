@@ -15,8 +15,6 @@ public class AppInterface {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Type [Y] if you want to continue or [N] if you want to exit:");
         String input_string = scanner.nextLine();
-
-        // Use equalsIgnoreCase to compare strings ignoring case
         if (input_string.equalsIgnoreCase("Y")) {
             return true;
         } else {
@@ -27,7 +25,6 @@ public class AppInterface {
     public void runApp() {
         while (test) {
             if (!start()) {
-                // If the user enters anything other than 'Y', stop testing
                 System.out.println("Exiting The Application.");
                 break;
             }
