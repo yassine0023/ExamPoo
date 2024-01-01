@@ -19,10 +19,10 @@ public class Customer {
         while (run) {
             System.out.println("<--------------------- Menu --------------------->");
             System.out.println("1 -> View Inventory");
-            System.out.println("2 -> Add ProductPackage To Cart");
-            System.out.println("3 -> Remove ProductPackage From Cart");
+            System.out.println("2 -> Add Product To Cart");
+            System.out.println("3 -> Remove Product From Cart");
             System.out.println("4 -> Empty Cart");
-            System.out.println("5 -> Update Quantity of a ProductPackage In Cart");
+            System.out.println("5 -> Update Quantity of a Product In Cart");
             System.out.println("6 -> Display a product's information");
             System.out.println("7 -> View Cart");
             System.out.println("8 -> Search");
@@ -93,15 +93,15 @@ public class Customer {
             for (Map.Entry<Product, Integer> entry : cart.entrySet()) {
                 Product product = entry.getKey();
                 int quantity = entry.getValue();
-                System.out.println("ProductPackage ID : " + product.getId() + " | ProductPackage Name : " + product.getName() +
-                        " | ProductPackage Quantity : " + quantity + " | ProductPackage Price : " + product.getPrice());
+                System.out.println("Product ID : " + product.getId() + " | Product Name : " + product.getName() +
+                        " | Product Quantity : " + quantity + " | Product Price : " + product.getPrice());
             }
         }
     }
 
     public void updateQuantity() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("ProductPackage ID: ");
+        System.out.println("Product ID: ");
         String productId = sc.nextLine();
         Product product = ProductManager.find_product(productId);
         if (product != null) {
@@ -109,66 +109,66 @@ public class Customer {
             int quantity = sc.nextInt();
             cart.remove(product);
             cart.put(product, quantity);
-            System.out.println("ProductPackage added to the cart.");
+            System.out.println("Product added to the cart.");
         } else {
-            System.out.println("ProductPackage not found.");
+            System.out.println("Product not found.");
         }
     }
 
     public void displayProductInfo() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("ProductPackage ID: ");
+        System.out.println("Product ID: ");
         String productId = sc.nextLine();
         Product product = ProductManager.find_product(productId);
         if (product != null) {
-            System.out.println("ProductPackage info: ");
+            System.out.println("Product info: ");
             System.out.println("ID: " + product.id);
             System.out.println("Name: " + product.name);
             System.out.println("Price: " + product.price);
             System.out.println("Quantity: " + product.quantity);
         } else {
-            System.out.println("ProductPackage not found.");
+            System.out.println("Product not found.");
         }
     }
 
     public void search() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("ProductPackage ID: ");
+        System.out.println("Product ID: ");
         String productId = sc.nextLine();
         Product product = ProductManager.find_product(productId);
         if (product != null) {
-            System.out.println("ProductPackage found.");
+            System.out.println("Product found.");
         } else {
-            System.out.println("ProductPackage not found.");
+            System.out.println("Product not found.");
         }
     }
 
 
     public void addProduct() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("ProductPackage ID: ");
+        System.out.println("Product ID: ");
         String productId = sc.nextLine();
         Product product = ProductManager.find_product(productId);
         if (product != null) {
             System.out.println("Quantity : ");
             int quantity = sc.nextInt();
             cart.put(product, quantity);
-            System.out.println("ProductPackage added to the cart.");
+            System.out.println("Product added to the cart.");
         } else {
-            System.out.println("ProductPackage not found.");
+            System.out.println("Product not found.");
         }
     }
 
     public void removeProduct() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("ProductPackage ID: ");
+        System.out.println("Product ID: ");
         String productId = sc.nextLine();
         Product product = ProductManager.find_product(productId);
         if (product != null && cart.containsKey(product)) {
             cart.remove(product);
-            System.out.println("ProductPackage removed from the cart.");
+            System.out.println("Product removed from the cart.");
         } else {
-            System.out.println("ProductPackage not found in the cart.");
+            System.out.println("Product not found in the cart.");
         }
     }
 

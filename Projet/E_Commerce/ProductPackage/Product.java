@@ -11,9 +11,9 @@ public class Product {
     public Product (){
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("ProductPackage's ID : ") ;
+        System.out.println("Product's ID : ") ;
         this.id = scanner.nextLine();
-        System.out.println("ProductPackage's Name : ") ;
+        System.out.println("Product's Name : ") ;
         this.name= scanner.nextLine();
         System.out.println("Price : ");
         this.price = scanner.nextDouble();

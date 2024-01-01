@@ -30,7 +30,7 @@ public class ProductManager {
             CsvUtils.writeCSV(Arrays.asList(data) , filePath);
         }
         else {
-            System.out.println("ProductPackage Already Exists");
+            System.out.println("Product Already Exists");
 
         }
 
@@ -38,12 +38,12 @@ public class ProductManager {
 
     public static void display_product_information(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("ProductPackage's ID : ") ;
+        System.out.println("Product's ID : ") ;
         String id = scanner.nextLine();
         int index = CsvUtils.find_index_line(Arrays.asList(id), filePath);
         List<List<String>> data = CsvUtils.readCSV(filePath);
         List<String> Product_data = data.get(index);
-        System.out.println("ProductPackage's Name : " + Product_data.get(1)) ;
+        System.out.println("Product's Name : " + Product_data.get(1)) ;
         System.out.println("Price : " + Product_data.get(2));
         System.out.println("Quantity : " + Product_data.get(3));
     }
@@ -93,7 +93,7 @@ public class ProductManager {
             String[] stringArray = newData.toArray(new String[0]);
             CsvUtils.appendToCSV(stringArray, id);
         } else {
-            System.out.println("ProductPackage ID Doesn't Exist!!");
+            System.out.println("Product ID Doesn't Exist!!");
         }
     }
 
